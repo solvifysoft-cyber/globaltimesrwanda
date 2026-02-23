@@ -59,7 +59,7 @@ const NewsCard = ({ id, title, excerpt, category, image, date, featured = false,
         <img
           src={normalizeImageUrl(image)}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
         />
       </div>
       <div className="flex-1 p-4 min-w-0">

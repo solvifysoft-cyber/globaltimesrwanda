@@ -1,53 +1,81 @@
-# Welcome to your Lovable project
+# Global Times Rwanda - Frontend
 
-## Project info
+## Description
 
-**URL**: https://lovable.dev/projects/fa36c367-dca1-48ac-bf05-c4a1e0ce797c
+This is the frontend application for Global Times Rwanda, a comprehensive news platform built for Rwanda. It provides news articles, announcements, advertisements, and media content with multilingual support.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- News articles and trending news
+- Announcements and contact forms
+- Media uploads and management
+- User authentication and session management
+- Multilingual support (English, French, Kinyarwanda)
+- Responsive design with Tailwind CSS
+- Modern UI components with ShadCN UI
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fa36c367-dca1-48ac-bf05-c4a1e0ce797c) and start prompting.
+- **Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI (via ShadCN)
+- **State Management**: React Query for API calls
+- **Routing**: React Router (assumed from context)
+- **Icons**: Lucide React
+- **Forms**: React Hook Form with Zod validation
 
-Changes made via Lovable will be committed automatically to this repo.
+## Installation
 
-**Use your preferred IDE**
+1. Clone the repository:
+   ```sh
+   git clone <YOUR_GIT_URL>
+   cd globaltimes-rwanda/frontend
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-Follow these steps:
+4. Open your browser to `http://localhost:5173` (default Vite port)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Available Scripts
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Project Structure
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # ShadCN UI components
+│   └── ...             # Custom components (Navbar, NewsCard, etc.)
+├── contexts/           # React contexts (Language, News)
+├── hooks/              # Custom React hooks
+├── lib/                # Utilities (API, translations, etc.)
+├── pages/              # Page components
+└── assets/             # Static assets
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Follow the existing code style
+2. Run `npm run lint` before committing
+3. Test your changes thoroughly
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
+This project is private and proprietary.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
 ## What technologies are used for this project?

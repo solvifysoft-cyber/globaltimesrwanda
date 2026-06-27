@@ -279,15 +279,30 @@ export class NewsService {
     const newTitle = updateNewsDto.titleEN;
     const slugUpdate = newTitle ? { slug: generateNewsSlug(newTitle, id) } : {};
 
+    // Prepare the update data
+    const updateData: any = {
+      ...rest,
+      ...slugUpdate,
+    };
+
+    // Handle images: if provided, REPLACE the entire array (don't append)
+    if (images !== undefined) {
+      updateData.images = images;
+    }
+
+    // Handle videos: if provided, REPLACE the entire array (don't append)
+    if (videos !== undefined) {
+      updateData.videos = videos;
+    }
+
+    // Handle imageCaptions: if provided, REPLACE the entire object
+    if (imageCaptions !== undefined) {
+      updateData.imageCaptions = imageCaptions;
+    }
+
     return this.prisma.news.update({
       where: { id },
-      data: {
-        ...rest,
-        ...slugUpdate,
-        ...(images !== undefined ? { images } : {}),
-        ...(videos !== undefined ? { videos } : {}),
-        ...(imageCaptions !== undefined ? { imageCaptions } : {}),
-      },
+      data: updateData,
     });
   }
 

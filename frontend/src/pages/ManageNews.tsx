@@ -129,17 +129,21 @@ const ManageNews = () => {
       let galleryUrls = formData.images ?? [];
       let videosArr = formData.videos ?? [];
 
+      // When updating an article with new images, REPLACE the old images instead of appending
       if (selectedImageFiles && selectedImageFiles.length > 0) {
         const uploadedMany = await uploadAPI.uploadFiles(selectedImageFiles);
         const urls = uploadedMany.map(u => u.url);
-        galleryUrls = [...galleryUrls, ...urls];
-        if (!imageUrl) imageUrl = urls[0];
+        // REPLACE existing images with the newly uploaded ones
+        galleryUrls = urls;
+        imageUrl = urls[0]; // Set the first uploaded image as the featured image
       }
 
+      // When updating an article with a new video, REPLACE the old video instead of appending
       if (selectedVideoFile) {
         const uploaded = await uploadAPI.uploadFile(selectedVideoFile);
         videoUrl = uploaded.url;
-        videosArr = [...videosArr, uploaded.url];
+        // REPLACE existing videos with the newly uploaded one
+        videosArr = [uploaded.url];
       }
       
       const article = {

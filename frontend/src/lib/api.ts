@@ -436,7 +436,7 @@ export const newsAPI = {
   /** Fetch related articles in the same category, excluding the given ID */
   getRelated: async (id: number, category: string, limit = 4): Promise<NewsArticle[]> => {
     const response = await fetch(
-      `${API_BASE_URL}/news/${id}/related?category=${encodeURIComponent(category)}&limit=${limit}`,
+      `${API_BASE_URL}/news-related/${id}?category=${encodeURIComponent(category)}&limit=${limit}`,
     );
     if (!response.ok) return [];
     return response.json();

@@ -117,5 +117,4 @@ export class NewsController {
     @Query('limit') limit?: string,
   ) {
     return this.newsService.getRelated(id, category, limit ? parseInt(limit) : 4);
-  }
-}
+  }}
